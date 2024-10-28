@@ -11,10 +11,13 @@ import Icon from "../../components/Icon";
 import Form from "../../containers/Form";
 import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
+import ModalEvent from "../../containers/ModalEvent"; // ajout de modalEvent
 
 const Page = () => {
   const { last } = useData();
   console.log(last, "last");
+  // Ajoutez le console.log pour déboguer
+  console.log("Last Event from DataContext:", last); // Log des données récupérées
   return (
     <>
       <header>
@@ -112,17 +115,26 @@ const Page = () => {
           </Modal>
         </div>
       </main>
-      <footer className="row">
-        <div className="col presta">
-          <h3>Notre dernière prestation</h3>
-          <EventCard
-            imageSrc={last?.cover}
-            title={last?.title}
-            date={new Date(last?.date)}
-            small
-            label="boom"
-          />
-        </div>
+      <footer data-testid="footer" className="row">
+        {last && (
+          <div data-testid="event-card" className="col presta">
+            <h3>Notre dernière prestation</h3>
+            <Modal key={last.id} Content={<ModalEvent event={last} />}>
+              {({ setIsOpened }) => (
+                <div data-testid="event-card">
+                  <EventCard
+                    onClick={() => setIsOpened(true)}
+                    imageSrc={last?.cover}
+                    title={last?.title}
+                    date={new Date(last?.date)}
+                    small
+                    label={last?.type}
+                  />
+                </div>
+              )}
+            </Modal>
+          </div>
+        )}
         <div className="col contact">
           <h3>Contactez-nous</h3>
           <address>45 avenue de la République, 75000 Paris</address>
