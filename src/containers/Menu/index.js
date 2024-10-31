@@ -9,19 +9,22 @@ const Menu = () => (
     <Logo />
     <ul>
       <li>
-        <a href="#nos-services">Nos services</a>
+        <a href="#ServicesContainer">Nos services</a>
       </li>
       <li>
-        <a href="#nos-realisations">Nos réalisations</a>
+        <a href="#EventsContainer">Nos réalisations</a>
       </li>
       <li>
-        <a href="#notre-equipe">Notre équipe</a>
+        <a href="#PeoplesContainer">Notre équipe</a>
       </li>
     </ul>
-    <Button title="contact" onClick={() => (window.document.location.hash = "#contact")}>
+    <Button
+      title="contact"
+      onClick={() => (window.document.location.hash = "#contact")}
+    >
       Contact
     </Button>
   </nav>
 );
-
+// Correction des ancres suivantes : Nos services, Nos réalisations et Notre équipe pour mener correctement aux sections correspondantes.
 export default Menu;

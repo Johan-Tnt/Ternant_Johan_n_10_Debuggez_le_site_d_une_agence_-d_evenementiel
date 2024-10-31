@@ -36,6 +36,7 @@ const Form = ({ onSuccess, onError }) => {
           <Select
             selection={["Personnel", "Entreprise"]}
             onChange={() => null}
+            // correction d'une faute d'ortographe dans le "label" ci-dessous
             label="Personnel / Entreprise"
             type="large"
             titleEmpty

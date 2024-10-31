@@ -14,3 +14,4 @@ export const MONTHS = {
 };
 
 export const getMonth = (date) => MONTHS[date.getMonth()];
+// Tableau des dates "getMonth" corriger pour afficher des numéros qui commencement à 0 et non à 1.
