@@ -15,9 +15,6 @@ import ModalEvent from "../../containers/ModalEvent"; // ajout de modalEvent
 
 const Page = () => {
   const { last } = useData();
-  console.log(last, "last");
-  // Ajoutez le console.log pour déboguer
-  console.log("Last Event from DataContext:", last); // Log des données récupérées
   return (
     <>
       <header>
@@ -124,7 +121,6 @@ const Page = () => {
       <footer data-testid="footer" className="row">
         {last && (
           // Ajout de last pour afficher la dernière présentation, ajout de modal et modalEvent pour qu'une modale s'ouvre lors du click
-          // correction d'une faute d'ortographe dans le "h3" ci-dessous
           <div data-testid="event-card" className="col presta">
             <h3>Notre dernière prestation </h3>
             <Modal key={last.id} Content={<ModalEvent event={last} />}>

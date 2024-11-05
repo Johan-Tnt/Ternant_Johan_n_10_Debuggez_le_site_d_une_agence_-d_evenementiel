@@ -29,7 +29,7 @@ describe("When Form is created", () => {
   });
 });
 
-// Ajout des tests d'intégration ci-dessous
+// Ajout des tests unitaires ci-dessous
 describe("When a page is created", () => {
   // Test pour vérifier qu'une liste d'événements est affichée sur la page
   it("a list of events is displayed", async () => {

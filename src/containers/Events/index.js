@@ -27,13 +27,7 @@ const EventList = () => {
     startIndex + PER_PAGE
   );
 
-  // Logique pour le débogage
-  console.log("Type sélectionné :", type);
-  console.log("Événements filtrés :", filteredEvents);
-  console.log("Événements paginés :", paginatedEvents); // Ajout de ce log pour vérifier la pagination
-
   const changeType = (evtType) => {
-    console.log("Type sélectionné modifié :", evtType);
     setCurrentPage(1); // Réinitialiser à la première page lors du changement de type
     setType(evtType); // Met à jour le type sélectionné
   };
